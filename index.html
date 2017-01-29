@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="phaser.min.js" ></script>
+    <script type="text/javascript" src="Boot.js" ></script>
+    <script type="text/javascript" src="Load.js" ></script>
+    <script type="text/javascript" src="Menu.js" ></script>
+    <script type="text/javascript" src="Play.js" ></script>
+    <script type="text/javascript" src="Choose.js" ></script>
+
+    <title>Game</title>
+</head>
+<style>
+    body{
+        margin:0px;
+        padding:0px;
+    }
+    #turn{
+        width:100%;
+        height:100%;
+        position:fixed;
+        top:0px;
+        left:0px;
+        background-color:white;
+        background-image:url('assets/screen_rotate (1).png');
+        background-repeat:no-repeat;
+        background-position: center center;
+        display:none;
+    }
+</style>
+<body class="col-md-12">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8&appId=582961695228242";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id = "turn"></div>
+
+<script type="text/javascript">
+
+
+    window.onload = function () {
+        var w = $(window).width() ;
+        var h =$(window).height();
+
+    var game = new Phaser.Game(w,h,Phaser.CANVAS);
+        game.state.add('Boot',Game.Boot);
+        game.state.add('Load',Game.Load);
+        game.state.add('Menu',Game.Menu);
+        game.state.add('Play',Game.Play);
+        game.state.add('Choose',Game.Choose);
+        game.state.start('Boot');
+        console.log(game);
+    };
+
+
+</script>
+<div class="fb-share-button" data-href="http://drebolii.com/game/index.html" data-layout="button_count"
+     data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank"
+     href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdrebolii.com%2Fgame%2Findex.html&amp;src=sdkpreparse">Share</a></div>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }  </style>
+</body>
+</html>
