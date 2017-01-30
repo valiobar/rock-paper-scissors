@@ -18,6 +18,7 @@ Game.Load.prototype ={
         this.load.spritesheet('3','assets/3.png',300,300);
         this.load.spritesheet('2','assets/2.png',300,300);
         this.load.spritesheet('1','assets/1.png',300,300);
+        this.load.spritesheet('starButton','assets/playNow.png');
 
 
 

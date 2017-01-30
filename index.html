@@ -17,6 +17,17 @@
         margin:0px;
         padding:0px;
     }
+    .fb-share-button {
+        height: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+
+
+        margin-left: 25%;
+    }
     #turn{
         width:100%;
         height:100%;
@@ -57,12 +68,16 @@
         game.state.start('Boot');
         console.log(game);
     };
-
+$(document).ready(function () {
+    $('#facebook').width($(window).width()/10); // Units are assumed to be pixels
+    $('#facebook').height($(window).height()/20);
+    $(".fb-share-button").hide();
+})
 
 </script>
 <div class="fb-share-button" data-href="http://drebolii.com/game/index.html" data-layout="button_count"
      data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank"
-     href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdrebolii.com%2Fgame%2Findex.html&amp;src=sdkpreparse">Share</a></div>
+     href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdrebolii.com%2Fgame%2Findex.html&amp;src=sdkpreparse"><img id="facebook" src="assets/Share.png"></a></div>
 <style>
     body {
         margin: 0;
