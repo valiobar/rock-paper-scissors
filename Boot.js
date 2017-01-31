@@ -12,6 +12,20 @@ Game.Boot = function (game) {
     console.log(Game.scaleFactorH+' '+Game.sclaeFactorW);
     console.log(Game.w+" "+Game.h);
 };
+let player = {
+    wins: 0,
+    ties: 0,
+    looses: 0,
+    win: function() {
+        this.wins++;
+    },
+    tie: function() {
+        this.ties++;
+    },
+    loose: function() {
+        this.looses++;
+    },
+};
 
 var firstRunLandscape=false;
 var ties = 0;
